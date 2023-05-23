@@ -99,6 +99,37 @@ The primary difference is the step of calculating the encryption keys.
     * Genipak code: NDDGGNHNKF
     * Magicard code: UFFIIUKURH
 
+## Other Technical Details
+### Hardware register info
+* $8000: Mode Register
+    * Byte Access, Write Only
+        * Bit 7-6: Unused (always set to 1 in code)
+        * Bit 5: Cheating code line 5 status (0: enabled, 1: disabled)
+        * Bit 4: Cheating code line 4 status (0: enabled, 1: disabled)
+        * Bit 3: Cheating code line 3 status (0: enabled, 1: disabled)
+        * Bit 2: Cheating code line 2 status (0: enabled, 1: disabled)
+        * Bit 1: Cheating code line 1 status (0: enabled, 1: disabled)
+        * Bit 0: Cheating program ROM/Game cartridge ROM mapping status (0: Genipak/Magicard ROM, 1: game cartridge ROM)
+    * Cheating code is disable if the sum value of all the char values in the code is 0.
+* $8002-$801E: Patch Registers
+    * Word Access, Write Only
+    * $8002: Cheating code line 1 patch address LSW(Bit 15-0 of the target address).
+    * $8004: Cheating code line 1 patch address MSW(Bit 31-16 of the target address).
+        * Bit 31..24 are always 0 in calculation result. (May not be actually mapped to any real hardware register, as the 68000 address bus is 24-bit.)
+    * $8006: Cheating code line 1 patch data.
+    * $8008: Cheating code line 2 patch address LSW.
+    * $800A: Cheating code line 2 patch address MSW.
+    * $800C: Cheating code line 2 patch data.
+    * $800E: Cheating code line 3 patch address LSW.
+    * $8010: Cheating code line 3 patch address MSW.
+    * $8012: Cheating code line 3 patch data.
+    * $8014: Cheating code line 4 patch address LSW.
+    * $8016: Cheating code line 4 patch address MSW.
+    * $8018: Cheating code line 4 patch data.
+    * $801A: Cheating code line 5 patch address LSW.
+    * $801C: Cheating code line 5 patch address MSW.
+    * $801E: Cheating code line 5 patch data.
+
 ## Special Thanks
 * EkeEke(eke_eke31@yahoo.fr), for the original Magicard notes.
 * dtxyy(QQ: 8583***44), for donating a working Magicard to me. (Oct,2022)
@@ -106,6 +137,6 @@ The primary difference is the step of calculating the encryption keys.
 
 ## Reference
 * Notes written by EkeEke and referenced by the topic on [this topic](http://gendev.spritesmind.net/forum/viewtopic.php?t=813)(via archive.org): [http://genplus-gx.googlecode.com/files/gamtec.txt](https://web.archive.org/web/20110901131001/http://genplus-gx.googlecode.com/files/gamtec.txt)
-    * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
+    * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Hardware register info](#hardware-register-info) and [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
 * Genipak: https://segaretro.org/Genipak
 * Magicard: https://segaretro.org/Magicard
