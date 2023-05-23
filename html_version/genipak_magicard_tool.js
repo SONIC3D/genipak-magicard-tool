@@ -327,8 +327,8 @@ function encodeMainProc(inputCode, codeType) {
     } else {
         // 输出计算过程
         var rObj = encodeAllCharPlace(inputCode, codeType);
-        var encKey1 = rObj.charQRST;
-        var encKey2 = rObj.charIJKL;
+        var encKey1 = rObj.charIJKL;
+        var encKey2 = rObj.charQRST;
         console.log('');
         console.log(`Encoding:`);
         console.log(`  encKey1: ${encKey1}`);
