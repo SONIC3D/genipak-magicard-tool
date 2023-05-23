@@ -140,3 +140,9 @@ The primary difference is the step of calculating the encryption keys.
     * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Hardware register info](#hardware-register-info) and [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
 * Genipak: https://segaretro.org/Genipak
 * Magicard: https://segaretro.org/Magicard
+
+## Cart Images
+* Genipak
+![](cart_images/genipak/IMG_4711_small.jpg){:width="512px"}.
+* Magicard
+![](cart_images/magicard/IMG_0603_small.jpg){:width="512px"}.
