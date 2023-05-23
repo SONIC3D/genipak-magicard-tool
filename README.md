@@ -143,6 +143,6 @@ The primary difference is the step of calculating the encryption keys.
 
 ## Cart Images
 * Genipak
-![](cart_images/genipak/IMG_4711_small.jpg){:width="512px"}.
+![](cart_images/genipak/IMG_4711_small.jpg | width=512)
 * Magicard
-![](cart_images/magicard/IMG_0603_small.jpg){:width="512px"}.
+![](cart_images/magicard/IMG_0603_small.jpg | width=512)
