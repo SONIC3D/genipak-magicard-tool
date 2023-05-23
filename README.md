@@ -99,6 +99,11 @@ The primary difference is the step of calculating the encryption keys.
     * Genipak code: NDDGGNHNKF
     * Magicard code: UFFIIUKURH
 
+## Special Thanks
+* EkeEke(eke_eke31@yahoo.fr), for the original Magicard notes.
+* dtxyy(QQ: 8583***44), for donating a working Magicard to me. (Oct,2022)
+* 老何189276(QQ: 2726****61), for donating a working Genipak to me. (May,2023)
+
 ## Reference
 * Notes written by EkeEke and referenced by the topic on [this topic](http://gendev.spritesmind.net/forum/viewtopic.php?t=813)(via archive.org): [http://genplus-gx.googlecode.com/files/gamtec.txt](https://web.archive.org/web/20110901131001/http://genplus-gx.googlecode.com/files/gamtec.txt)
     * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
