@@ -80,8 +80,8 @@ The primary difference is the step of calculating the encryption keys.
     ```
     data_1 = 0;
     data_2 = 3;
-    key1 = (0 + 3) % 0xF = 3;
-    key2 = (3 + 3) % 0xF = 6;
+    key1 = (data_1 + data_2) % 0xF = (0 + 3) % 0xF = 3;
+    key2 = (key1 + data_2) % 0xF = (3 + 3) % 0xF = 6;
     ```
 * Step 2: Apply the algorithm and concatenate the result string.
     ```
