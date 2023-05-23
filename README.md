@@ -1,5 +1,8 @@
 # Genipak and Magicard Tool
 
+## Online version
+* Just visit: https://sonic3d.github.io/genipak-magicard-tool/
+
 ## Introduction
 The Genipak and Magicard Tool is a tool for converting raw address/value pairs of cheating codes to Genipak and Magicard formats.
 
@@ -9,9 +12,11 @@ Genipak and Magicard are Sega Genesis/MegaDrive cheating devices similar to Game
 The code formats of Genipak and Magicard are different. But the internal algorithm is the same.
 
 ## How to use
-For the Node.js version, you need to install Node.js first. Then run `node genipakEncDec.js` or `node magicardEncDec.js` to check the detailed usage notes.
+* For the Node.js version, you need to install Node.js first. Then run `node genipakEncDec.js` or `node magicardEncDec.js` to check the detailed usage notes.
 
-For the HTML version, just open the index.html file in your browser. Enter the code and press the corresponding button to convert.
+* For the HTML version, just open the index.html file in your browser. Enter the code and press the corresponding button to convert.
+
+* Or simply visit the online version: https://sonic3d.github.io/genipak-magicard-tool/
 
 ## Code format and the algorithm
 Both Genipak and Magicard codes are 10 characters long. The code can be converted to a raw address/value pair for patching the data output on the console ROM bus. (The address is 24 bits long, and the value is 16 bits long.)
