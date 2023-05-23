@@ -136,7 +136,7 @@ The primary difference is the step of calculating the encryption keys.
 * 老何189276(QQ: 2726****61), for donating a working Genipak to me. (May,2023)
 
 ## Reference
-* Notes written by EkeEke and referenced by the topic on [this topic](http://gendev.spritesmind.net/forum/viewtopic.php?t=813)(via archive.org): [http://genplus-gx.googlecode.com/files/gamtec.txt](https://web.archive.org/web/20110901131001/http://genplus-gx.googlecode.com/files/gamtec.txt)
+* Notes written by EkeEke and referenced by [this topic](http://gendev.spritesmind.net/forum/viewtopic.php?t=813)(via archive.org): [http://genplus-gx.googlecode.com/files/gamtec.txt](https://web.archive.org/web/20110901131001/http://genplus-gx.googlecode.com/files/gamtec.txt)
     * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Hardware register info](#hardware-register-info) and [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
 * Genipak: https://segaretro.org/Genipak
 * Magicard: https://segaretro.org/Magicard
