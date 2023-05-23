@@ -16,6 +16,8 @@ For the HTML version, just open the index.html file in your browser. Enter the c
 ## Code format and the algorithm
 Both Genipak and Magicard codes are 10 characters long. The code can be converted to a raw address/value pair for patching the data output on the console ROM bus. (The address is 24 bits long, and the value is 16 bits long.)
 
+If you plan to verify the algorithm details in this doc. The original decoding code function entry is at the offset 0x0F3A of the Genipak ROM, and the offset 0x0FC8 of the Magicard ROM.
+
 The decoding algorithm (converting the cheating code to a raw address/value pair) can be split into the following steps:
 1. Code character values transition.
 2. Encryption key extraction.
