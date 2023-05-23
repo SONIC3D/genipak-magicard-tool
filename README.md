@@ -143,6 +143,6 @@ The primary difference is the step of calculating the encryption keys.
 
 ## Cart Images
 * Genipak
-<img src="https://github.com/SONIC3D/genipak-magicard-tool/blob/master/cart_images/genipak/IMG_4711_small.jpg?raw=true" width="512" />
+    <img src="https://github.com/SONIC3D/genipak-magicard-tool/blob/master/cart_images/genipak/IMG_4711_small.jpg?raw=true" width="512" />
 * Magicard
-<img src="https://github.com/SONIC3D/genipak-magicard-tool/blob/master/cart_images/magicard/IMG_0603_small.jpg?raw=true" width="512" />
+    <img src="https://github.com/SONIC3D/genipak-magicard-tool/blob/master/cart_images/magicard/IMG_0603_small.jpg?raw=true" width="512" />
