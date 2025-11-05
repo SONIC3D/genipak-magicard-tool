@@ -5,6 +5,7 @@
     <meta http-equiv=X-UA-Compatible content=IE=Edge>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="genipak_magicard_tool.js"></script>
+    <script type="text/javascript" src="gamegenieEncDec.js"></script>
     <title>Genipak Magicard Tool</title>
 </head>
 
@@ -17,9 +18,9 @@
 <body link=#0000cc>
 
 <div id=content>
-    Genipak Magicard Tool<br>
+    Genipak Magicard GameGenie Tool(for Sega Genesis)<br>
     Author: sonic3d@gmail.com<br>
-    Version: v1.0 (20230519)<br>
+    Version: v1.1 (20251105)<br>
     <br>
     <div>
         <table border="1">
@@ -64,6 +65,17 @@
                     <button type="button" name="btnInputConvFromMagicard" value="" id="btnConvFromMagicard">Convert</button>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label>Game Genie Code</label>
+                </td>
+                <td>
+                    <input type="text" name="txtInputCodeGameGenie" id="txtCodeGameGenie" value="" placeholder="ACLAATD4" />
+                </td>
+                <td>
+                    <button type="button" name="btnInputConvFromGameGenie" value="" id="btnConvFromGameGenie">Convert</button>
+                </td>
+            </tr>
             </tbody>
         </table>
         <br><br>
@@ -105,6 +117,11 @@
                 var rObjMagicard = encodeAllCharPlace(inputCode, 0);
                 var resultCodeMagicard = rObjMagicard.resultEncryptedCode;
                 $("#txtCodeMagicard").val(resultCodeMagicard);
+
+                var ggCodeSys = new GameGenieCodeSystem();
+                var rObjGameGenie = ggCodeSys.encodeAllCharPlace(inputCode);
+                var resultCodeGameGenie = rObjGameGenie.resultEncryptedCode;
+                $("#txtCodeGameGenie").val(resultCodeGameGenie);
             });
         }
 
@@ -178,6 +195,42 @@
             });
         }
 
+        /**
+         * Genipak码"转换"按钮的事件绑定
+         */
+        function bindOnClick_btnConvFromGameGenie() {
+            $("#btnConvFromGameGenie").click(function () {
+                // var btnValue = $(this).attr('value');
+                // alert('value of the button: ' + btnValue);
+
+                var ggCodeSys = new GameGenieCodeSystem();
+
+                var errMsg = "";
+
+                var inputCode = $("#txtCodeGameGenie").val();
+                var validateResultCode = ggCodeSys.validateEncryptedCode(inputCode);
+                if (validateResultCode != 0) {
+                    switch(validateResultCode) {
+                        case -1:
+                            errMsg = "输入的金手指码长度不正确";
+                            break;
+                        case -2:
+                            errMsg = "输入的金手指码含有非正常字符，GameGenie码只允许包含以下半角字符: ABCDEFGHJKLMNPRSTVWXYZ0123456789";
+                            break;
+                    }
+                    $("#lblErrMsg").html(errMsg);
+                    return;
+                }
+
+                var rObjRAW = ggCodeSys.decodeAllCharPlace(inputCode);
+                var resultCodeRAW = rObjRAW.resultAddrDataPair;
+                $("#txtCodeRAW").val(resultCodeRAW);
+
+                // 将转换出的RAW码，再次转换为Genipak码和Magicard码
+                $("#btnConvFromRAW").trigger("click");
+            });
+        }
+
         // 应用事件绑定函数
         // 从RAW码转换
         bindOnClick_btnConvFromRAW();
@@ -185,6 +238,8 @@
         bindOnClick_btnConvFromGenipak();
         // 从Magicard码转换
         bindOnClick_btnConvFromMagicard();
+        // 从GameGenie码转换
+        bindOnClick_btnConvFromGameGenie();
     </script>
 </div>
 </body>
