@@ -67,7 +67,7 @@ After converting the cheat code to a HEX value string, there are 2 encryption ke
 * Finally, we get the raw address/value pair: `003C1C:4E71`.
 
 ### Encoding the raw address/value pair to the Genipak or Magicard code
-Basically, it's just the reversed calculation steps of the decoding algorithm. 
+Basically, it's just the reversed calculation steps of the decoding algorithm.
 1. Encryption key calculation.
 2. Apply the encoding algorithm to each character and concatenate the results.
 3. Code character values transition.
@@ -145,6 +145,7 @@ The primary difference is the step of calculating the encryption keys.
     * Please note that the register mapping info and the code concatenation info in the above notes are incorrect. Check the section [Hardware register info](#hardware-register-info) and [Code format and the algorithm](#code-format-and-the-algorithm) in current ReadMe for the corrected info.
 * Genipak: https://segaretro.org/Genipak
 * Magicard: https://segaretro.org/Magicard
+* Game Genie: https://www.segakore.fr/media/segakore/outils/md_gg_codec/md_gg_conv_method.txt
 
 ## Cart Images
 * Genipak
